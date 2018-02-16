@@ -1,0 +1,30 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/classpanel/classpanel"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ClassTable for XJTLU",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "User",
+        "selectedColor": "#1B92FC",
+        "iconPath": "./assets/images/user.png",
+        "selectedIconPath": "./assets/images/user_selected.png"
+      },
+      {
+        "pagePath": "pages/classpanel/classpanel",
+        "text": "Classes",
+        "selectedColor": "#1B92FC",
+        "iconPath": "./assets/images/schedule.png",
+        "selectedIconPath": "./assets/images/schedule_selected.png"
+      }
+    ]
+  }
+}

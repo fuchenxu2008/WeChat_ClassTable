@@ -1,0 +1,183 @@
+/**index.wxss**/
+@import "../../assets/fonts/font_pacifico.wxss";
+@import "../../assets/fonts/icon.wxss";
+
+.container {
+    padding: 55px 60px 10px 60px;
+}
+
+.banner {
+  margin-bottom: 15%;  
+  font-family: 'Pacifico', cursive;
+  color: rgb(37, 146, 252);
+  font-size: 2em;
+  text-align: center;
+}
+
+.form-section {
+  width: 100%;
+}
+
+.user-input {
+  border: 1px solid rgb(217, 217, 217);
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 20px;
+  color: rgb(73, 73, 73);
+}
+
+.form-checkbox {
+  font-size: 15px;
+  color: rgb(89, 89, 89);
+  margin-bottom: 20px;
+}
+
+.form-btn {
+  background-color: rgb(37, 146, 252);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 10px 20px rgb(113, 191, 255);
+  margin-bottom: 40px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.help-btn {
+  line-height: 2em;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgb(196, 228, 255);
+  border: 1px solid #1890ff;
+  color: #1890ff;
+  border-radius: 25px;
+}
+
+.emphasis-text {
+  color: rgb(37, 146, 252);
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: all .4s linear;
+  position: absolute;
+  left: 0rpx;
+  top: 100rpx;
+  z-index: 10;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.modal-heading {
+  padding: 5px 20px 0px 20px;
+  border-bottom: 1px solid rgb(232, 232, 232);
+}
+
+.modal-body {
+  width: 95%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 1);
+  font-size: 30rpx;
+  font-family: "微软雅黑";
+  border-radius: 5px;
+}
+
+.modal-content {
+  padding: 10px 20px 20px 20px;
+  color: rgb(112, 112, 112);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal-footer {
+  border-top: 1px solid rgb(232, 232, 232);
+  padding: 5px 20px 5px 20px;
+}
+
+.confirm-btn {
+  border: none;
+  background-color: white;
+  color: #1890ff;
+  font-weight: bold;
+}
+
+.heading {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  color: rgba(46, 46, 46, 0.85);
+  font-weight: 500;
+  display: block;
+  font-size: 1.25em;
+}
+
+.mask {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.showMask, .showModal {
+  /* display: block; */
+  opacity: 1;
+  visibility: visible;
+}
+
+.hideMask, .hideModal {
+    /* display: none;   */
+   /* height: 0; */
+   opacity: 0; 
+   visibility: hidden; 
+  transition: all .2s linear;
+}
+
+.contact-btn {
+  width: 100%;
+  border-radius: 20px;
+  background-color: white;
+  line-height: 2.5em;
+}
+
+.email-btn {
+  color: rgb(37, 146, 252);
+  box-shadow: 0px 0px 25px rgb(212, 236, 255);
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.email-btn:before {
+  font-family: "icon-email";
+  content: "\e648  ";
+  font-size: 20px;
+  color: rgb(37, 146, 252);
+}
+
+.wechat-btn {
+  color: rgb(132, 209, 80);
+  box-shadow: 0px 0px 25px rgb(221, 255, 195);
+}
+
+.wechat-btn:before {
+  font-family: "icon-wechat";
+  content: "\ec7d  ";
+  font-size: 20px;
+  color: rgb(132, 209, 80);
+}
+
+button::after {
+  border: none;
+}

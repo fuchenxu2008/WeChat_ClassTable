@@ -1,0 +1,70 @@
+@import "../../assets/fonts/icon.wxss";
+
+.container {
+      padding: 20px 10px 10px 10px;
+}
+
+.date-selector {
+    margin-bottom: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(37, 146, 252);
+    background-color: rgb(37, 146, 252);
+    color: white;
+    box-shadow: 0px 10px 20px rgb(113, 191, 255);
+}
+
+.week-number {
+    text-align: center;
+    margin-bottom: 30px;
+    color: rgb(100, 100, 100);
+    font-size: 23px;
+    font-weight: bold;
+    text-shadow: 0px 0px 20px rgb(228, 228, 228);
+}
+
+.weekday {
+    color: rgb(189, 189, 189);
+}
+
+.class-card {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 10px 10px 20px ;
+    margin: 0 40px 15px 40px;
+    background-color: white;
+    box-shadow: 0px 10px 20px rgb(228, 228, 228);
+    border-left: 5px solid rgb(37, 146, 252);
+    color: rgb(89, 89, 89);
+    font-size: 16px;
+}
+
+.class-title {
+    color: black;
+    /* font-weight: bold; */
+}
+
+.class-time {
+    color: rgb(37, 146, 252);
+}
+
+.no-class {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(89, 89, 89);
+}
+
+.non-holiday:before {
+    font-family: "icon-calendar";
+    content: "\e62c  ";
+    font-size: 20px;
+}
+
+.holiday:before {
+    font-family: "icon-calendar";
+    content: "\e61a  ";
+    font-size: 20px;
+    /* color: rgb(110, 110, 110); */
+}

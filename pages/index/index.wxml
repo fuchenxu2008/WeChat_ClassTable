@@ -1,0 +1,86 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='banner'>
+    <text>ClassTable</text>
+  </view>
+  <view class="form-section">
+    <form bindsubmit="formSubmit">
+      <view>
+        <input name="uname" bindinput="handleUnameChange" confirm-type="next" value='{{uname}}' class="user-input" type="text" placeholder="Ebridge Username"
+        />
+        <input name="psw" bindinput="handlePswChange" confirm-type="done" value='{{psw}}' class="user-input" type="password" placeholder="Password"
+        />
+      </view>
+      <checkbox-group bindchange="handleCheckboxChange" class="form-checkbox">
+        <label class="checkbox">
+          <checkbox checked="{{remember}}" /> Remember me
+        </label>
+      </checkbox-group>
+      <view class="btn-area">
+        <button formType="submit" class="form-btn">LOGIN</button>
+      </view>
+    </form>
+    <view class="left">
+      <button class="help-btn" bindtap="showManualModal">Manual</button>
+    </view>
+    <view class="right">
+      <button class="help-btn" bindtap="showContactModal">Contact</button>
+    </view>
+  </view>
+
+  <view class="modal {{showManualModal.showModal}}">
+    <view class="modal-body">
+      <view class="modal-heading">
+        <view class="heading h1">User Guide</view>
+      </view>
+      <view class="modal-content">
+        <view class="heading">让我们开始吧：</view>
+          <view>1. 输入你的E-bridge用户名和密码来验证登录。</view>
+          <view>2. 等待<span class="emphasis-text">8-15</span>秒来让后台帮您生成日历。</view>
+          <view>3. 不要忘记<span class="emphasis-text">核对</span>一下与<span class="emphasis-text">E-bridge</span>上的官方课表是否一致～</view>
+
+        <view class="heading">注意事项</view>
+          <view>1. 为了方便查看课表，勾选<span class="emphasis-text">Remember me</span>会将您的<span class="emphasis-text">登录信息</span>和<span class="emphasis-text">课表信息</span>存储在您的<span class="emphasis-text">设备本地</span>，并在您每次打开小程序时<span class="emphasis-text">自动显示缓存的课表</span>。</view>
+          <view>2. 课表页面会在启动时<span class="emphasis-text">自动显示当天课程</span>，您可以<span class="emphasis-text">左右滑动</span>或者通过<span class="emphasis-text">顶部日历</span>查看其他日期课程。</view>
+          <view>3. 由于课表会<span class="emphasis-text">有几率发生变动</span>，您可以在课表界面<span class="emphasis-text">下拉刷新</span>重新获取最新的课表。</view>
+        <view class="heading">免责声明：</view>
+        <view>您的密码将仅用于登录E-bridge验证身份，本站不会收集或用于其他用途。</view>
+      </view>
+      <view class="modal-footer">
+        <button class="confirm-btn" bindtap="hideManualModal">Got it</button>
+      </view>
+    </view>
+  </view>
+  <view class="mask {{showManualModal.showMask}}"></view>
+
+  <view class="modal {{showContactModal.showModal}}">
+    <view class="modal-body">
+      <view class="modal-heading">
+        <view class="heading h1">Contact Me</view>
+      </view>
+      <view class="modal-content">
+        <view class="heading">导出日历？</view>
+        <view>
+          如果你想<span class="emphasis-text">下载日历文件存到手机</span>，让你的课程更加融入你的日程安排，可以用手机浏览器打开Web版课表助手
+          <span class="emphasis-text underline" bindtap="copyWeb">https://class.kyrie.top（点击复制）</span>，
+          同样的操作之后就可以下载到日历文件了，<span class="emphasis-text">Web版同样实现了日历及逐天查看功能</span>，check it out !
+        </view>
+        <view class="heading">联系方式</view>
+        <view>嗨！我是西浦大三软工的傅晨旭，感谢你的使用和支持～<span class="emphasis-text">请在导出日历后仔细核对是否与官方课表一致。
+          （您应额外注意课程和其对应的教学周是否匹配）</span> 。如果您遇到了任何问题，发现了错误或有其他需求，
+          可以通过以下两种方式联系我~ 如果您觉得本工具很好用，欢迎帮忙转发支持哈 :)
+        </view>
+        <view>
+          <button class="email-btn contact-btn" bindtap="copyEmail">fuchenxu2008@163.com</button>
+        </view>
+        <view>
+          <button class="wechat-btn contact-btn" bindtap="copyWeChat">fuchenxu2008</button>
+        </view>
+      </view>
+      <view class="modal-footer">
+        <button class="confirm-btn" bindtap="hideContactModal">Got it</button>
+      </view>
+    </view>
+  </view>
+  <view class="mask {{showContactModal.showMask}}"></view>
+</view>
