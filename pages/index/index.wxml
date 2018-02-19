@@ -28,10 +28,13 @@
     </view>
   </view>
 
-  <view class="modal {{showManualModal.showModal}}">
+  <view class="modal {{showManualModal.showModal}} ripple fadeInDown">
     <view class="modal-body">
       <view class="modal-heading">
-        <view class="heading h1">User Guide</view>
+        <view class="heading h1">
+          User Guide
+          <view class="close-x" bindtap="hideManualModal">x</view>
+        </view>
       </view>
       <view class="modal-content">
         <view class="heading">让我们开始吧：</view>
@@ -53,10 +56,13 @@
   </view>
   <view class="mask {{showManualModal.showMask}}"></view>
 
-  <view class="modal {{showContactModal.showModal}}">
+  <view class="modal {{showContactModal.showModal}} ripple fadeInDown">
     <view class="modal-body">
       <view class="modal-heading">
-        <view class="heading h1">Contact Me</view>
+        <view class="heading h1">
+          Contact Me
+          <view class="close-x" bindtap="hideContactModal">x</view>
+        </view>
       </view>
       <view class="modal-content">
         <view class="heading">导出日历？</view>

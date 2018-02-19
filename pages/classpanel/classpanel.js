@@ -18,7 +18,7 @@ const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satur
 Page({
 
     data: {
-        screenHeight: '800',
+        listHeight: '800',
         classTable: {},
         classesOflastDay: [],
         classesOfDay: [],
@@ -215,7 +215,7 @@ Page({
         wx.getSystemInfo({
             success: function (res) {
                 self.setData({
-                    screenHeight: res.windowHeight - 182
+                    listHeight: res.windowHeight - 182
                 })
             }
         })

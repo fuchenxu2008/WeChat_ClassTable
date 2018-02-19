@@ -1,6 +1,7 @@
 /**index.wxss**/
 @import "../../assets/fonts/font_pacifico.wxss";
 @import "../../assets/fonts/icon.wxss";
+@import "../../npm/ripples/ripples.min.wxss";
 
 .container {
     padding: 55px 60px 10px 60px;
@@ -68,12 +69,10 @@
 }
 
 .modal {
-  opacity: 0;
-  visibility: hidden;
   transition: all .4s linear;
   position: absolute;
   left: 0rpx;
-  top: 100rpx;
+  top: 40rpx;
   z-index: 10;
   width: 100%;
   margin-bottom: 50px;
@@ -121,6 +120,11 @@
   font-size: 1.25em;
 }
 
+.close-x {
+  float: right;
+  cursor: pointer;
+}
+
 .mask {
   position: fixed;
   top: 0px;
@@ -132,16 +136,11 @@
 }
 
 .showMask, .showModal {
-  /* display: block; */
-  opacity: 1;
-  visibility: visible;
+  display: block;
 }
 
 .hideMask, .hideModal {
-    /* display: none;   */
-   /* height: 0; */
-   opacity: 0; 
-   visibility: hidden; 
+    display: none;  
   transition: all .2s linear;
 }
 

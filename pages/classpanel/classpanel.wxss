@@ -1,7 +1,14 @@
 @import "../../assets/fonts/icon.wxss";
 
-.container {
-      padding: 20px 10px 10px 10px;
+page {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.panel-header-section {
+    padding: 20px 10px 10px 10px;
+    align-self: center;
 }
 
 .date-selector {
@@ -26,6 +33,13 @@
     color: rgb(189, 189, 189);
 }
 
+.class-swiper {
+    flex: 1;
+    display: flex;
+    overflow: auto;
+    overflow-y: auto;
+}
+
 .class-card {
     border: none;
     border-radius: 10px;
@@ -40,7 +54,6 @@
 
 .class-title {
     color: black;
-    /* font-weight: bold; */
 }
 
 .class-time {

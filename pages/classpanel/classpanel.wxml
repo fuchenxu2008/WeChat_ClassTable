@@ -4,43 +4,51 @@
 
 <template is="calendar" data="{{ ...$wux.calendar.date }}" />
 
-
 <view class="container">
-  <view class="date-selector">
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input" bindtap="openCalendar">
-        <view class="weui-cell__hd">
-          <view class="weui-label">Date</view>
-        </view>
-        <view class="weui-cell__bd">
-          <view class="weui-input">{{ selected_date || 'Select date' }}</view>
+
+  <view class="panel-header-section">
+    <view class="date-selector">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input" bindtap="openCalendar">
+          <view class="weui-cell__hd">
+            <view class="weui-label">Date</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="weui-input">{{ selected_date || 'Select date' }}</view>
+          </view>
         </view>
       </view>
     </view>
+
+    <template is="calendar"></template>
+    <view class="week-number" wx:if="{{selected_week > 0 && selected_week < 15}}">- Week {{selected_week}}
+      <text class="weekday"> {{selected_weekDay}}-</text>
+    </view>
   </view>
 
-  <template is="calendar"></template>
-  <view class="week-number" wx:if="{{selected_week > 0 && selected_week < 15}}">- Week {{selected_week}} <text class="weekday"> {{selected_weekDay}}-</text></view>
-</view>
-
-<swiper duration="0" style="height: {{screenHeight}}px" current="{{activeIndex}}" bindchange="changeswiper">
-  <block wx:for="{{[classesOflastDay, classesOfDay, classesOfNextDay]}}" wx:for-item="classes" wx:key="index">
-    <swiper-item>
-      <view wx:if="{{classes.length > 0}}">
-        <view wx:if="{{!classes[0].holiday}}">
-          <view wx:for="{{classes}}" wx:key="unique" wx:for-item="class">
-            <view class="class-card">
-              <view class="class-title">{{class.classTitle}}</view>
-              <view class="class-time">{{class.startTime}} - {{class.endTime}}</view>
-              <view class="class-location">{{class.location}}</view>
-            </view>
+  <swiper duration="0" class="class-swiper" current="{{activeIndex}}" bindchange="changeswiper">
+    <block wx:for="{{[classesOflastDay, classesOfDay, classesOfNextDay]}}" wx:for-item="classes" wx:key="index">
+      <swiper-item>
+        <view wx:if="{{classes.length > 0}}">
+          <view wx:if="{{!classes[0].holiday}}">
+            <scroll-view scroll-y style="height: {{listHeight}}px">
+              <view wx:for="{{classes}}" wx:key="unique" wx:for-item="class">
+                <view class="class-card">
+                  <view class="class-title">{{class.classTitle}}</view>
+                  <view class="class-time">{{class.startTime}} - {{class.endTime}}</view>
+                  <view class="class-location">{{class.location}}</view>
+                </view>
+              </view>
+              <view style="height: 50px;"></view>
+            </scroll-view>
+          </view>
+          <view wx:else>
+            <view class="no-class holiday">{{classes[0].holiday}}</view>
           </view>
         </view>
-        <view wx:else>
-          <view class="no-class holiday">{{classes[0].holiday}}</view>
-        </view>
-      </view>
-      <view wx:else class="no-class non-holiday"> No class, take a break ~ </view>
-    </swiper-item>
-  </block>
-</swiper>
+        <view wx:else class="no-class non-holiday">No class, take a break ~</view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+</view>

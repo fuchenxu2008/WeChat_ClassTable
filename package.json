@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "moment": "^2.20.1",
+    "ripples.wxss": "^1.1.0",
     "wxapp-socket-io": "^1.0.0"
   },
   "devDependencies": {},
