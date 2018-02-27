@@ -7,8 +7,11 @@
   /* align-items: center; */
   justify-content: space-between;
   box-sizing: border-box;
+  font-family: 'Helvetica Neue';
+  font-weight: normal;
+  font-style: normal;
 } 
 
+@import "./assets/fonts/font_HelveticaNeue.wxss";
 @import 'components/wux.wxss';
 @import 'components/weui.wxss';
-/* @import 'components/skyvow.wxss'; */

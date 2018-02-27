@@ -32,7 +32,7 @@
     <view class="modal-body">
       <view class="modal-heading">
         <view class="heading h1">
-          User Guide
+          User Guide <span class="version-number">v1.1.2</span>
           <view class="close-x" bindtap="hideManualModal">x</view>
         </view>
       </view>

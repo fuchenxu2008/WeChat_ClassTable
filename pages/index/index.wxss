@@ -120,6 +120,10 @@
   font-size: 1.25em;
 }
 
+.version-number {
+  color: rgb(160, 160, 160);
+}
+
 .close-x {
   float: right;
   cursor: pointer;
