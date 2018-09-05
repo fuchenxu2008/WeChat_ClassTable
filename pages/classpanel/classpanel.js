@@ -30,9 +30,14 @@ Page({
     },
 
     getWeek() {
-        const termStart = moment("2018-02-26", "YYYY-MM-DD");
+        const termStart = moment(config.termStart, "YYYY-MM-DD");
         const selectedDay = moment(this.data.selected_date);
-        return Math.floor(selectedDay.diff(termStart, 'days') / 7) + 1;
+        const actualWeek = Math.floor(selectedDay.diff(termStart, 'days') / 7) + 1;
+        if (actualWeek === 4) {
+            return 'National Holiday';
+        } else {
+            return actualWeek > 4 ? actualWeek - 1 : actualWeek;
+        }
     },
 
     getInterval(period) {

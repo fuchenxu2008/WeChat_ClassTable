@@ -60,6 +60,10 @@ page {
     color: rgb(37, 146, 252);
 }
 
+.class-location {
+  color: rgb(136, 136, 136);
+}
+
 .no-class {
     position: absolute;
     top: 50%;

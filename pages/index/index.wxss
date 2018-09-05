@@ -8,11 +8,17 @@
 }
 
 .banner {
-  margin-bottom: 15%;  
+  margin-bottom: 20%;  
   font-family: 'Pacifico', cursive;
   color: rgb(37, 146, 252);
   font-size: 2em;
   text-align: center;
+}
+
+.version-hint {
+  /* font-family: 'Helvetica Neue'; */
+  font-size: 1rem;
+  color: rgb(121, 179, 255);
 }
 
 .form-section {
@@ -52,6 +58,7 @@
 
 .help-btn {
   line-height: 2em;
+  font-size: 1rem;
   background-color: white;
   box-shadow: 0px 10px 20px rgb(196, 228, 255);
   border: 1px solid #1890ff;
