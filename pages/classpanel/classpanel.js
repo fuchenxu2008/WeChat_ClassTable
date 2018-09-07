@@ -3,7 +3,7 @@
 const app = getApp()
 const numberRange = require('../../utils/util').numberRange;
 const moment = require('../../npm/moment/moment');
-const io = require('../../npm/wxapp-socket-io/index.js')
+const io = require('../../npm/weapp.socket.io');
 const config = require('../../config/index');
 import Calendar from '../../components/calendar/calendar'
 
@@ -34,7 +34,7 @@ Page({
         const selectedDay = moment(this.data.selected_date);
         const actualWeek = Math.floor(selectedDay.diff(termStart, 'days') / 7) + 1;
         if (actualWeek === 4) {
-            return 'National Holiday';
+            return '3.5';
         } else {
             return actualWeek > 4 ? actualWeek - 1 : actualWeek;
         }
@@ -113,15 +113,18 @@ Page({
             wx.showLoading({
                 title: `Loading...`,
             })
-            const progress = io('wss://class.kyrie.top')
+            const progress = io(config.domain)
             const socketId = `${uname}_${Math.random() * 1000}`;
             progress.on(socketId, data => {
                 wx.showLoading({
                     title: `${status[data]}`,
-                })
+                });
+                if (data === '-1' || data === 'Got table') {
+                    progress.close();
+                }
             })
             wx.request({
-                url: 'https://class.kyrie.top/ebridge/class',
+                url: `${config.domain}/ebridge/class`,
                 method: "POST",
                 data: { uname, psw, socketId },
                 success: res => {

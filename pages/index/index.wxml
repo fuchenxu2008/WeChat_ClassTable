@@ -28,6 +28,9 @@
       <button class="help-btn" bindtap="showContactModal">Contact</button>
     </view>
   </view>
+  <view class="loggedin-hint" wx:if="{{logged}}">
+    <icon type="success" size="16" />Logged in
+  </view>
 
   <view class="modal {{showManualModal.showModal}} ripple fadeInDown">
     <view class="modal-body">
