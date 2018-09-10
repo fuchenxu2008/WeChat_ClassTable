@@ -34,7 +34,7 @@ Page({
         const selectedDay = moment(this.data.selected_date);
         const actualWeek = Math.floor(selectedDay.diff(termStart, 'days') / 7) + 1;
         if (actualWeek === 4) {
-            return '3.5';
+            return 3.5;
         } else {
             return actualWeek > 4 ? actualWeek - 1 : actualWeek;
         }
@@ -80,7 +80,7 @@ Page({
                 }
             });
             classesOfDay = classesOfDay.filter(Class => {
-                return this.getInterval(Class.period).includes(week);
+                return this.getInterval(Class.period).indexOf(week) !== -1;   // Potential error
             })
         }
         return classesOfDay;
