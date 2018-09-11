@@ -28,15 +28,20 @@
       <button class="help-btn" bindtap="showContactModal">Contact</button>
     </view>
   </view>
+
   <view class="loggedin-hint" wx:if="{{logged}}">
     <icon type="success" size="16" />Logged in
+  </view>
+
+  <view class="floatPopout" bindtap="openMapApp">
+    <image src="../../assets/images/map.jpeg" mode="widthFix" class="linkedapp-img"></image>
   </view>
 
   <view class="modal {{showManualModal.showModal}} ripple fadeInDown">
     <view class="modal-body">
       <view class="modal-heading">
         <view class="heading h1">
-          User Guide <span class="version-number">v1.2.4</span>
+          User Guide <span class="version-number">v1.2.5</span>
           <view class="close-x" bindtap="hideManualModal">x</view>
         </view>
       </view>

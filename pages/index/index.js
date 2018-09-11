@@ -49,6 +49,7 @@ Page({
       'Logging in...': 'Initiating...',
       '0': 'Logging ...',
       'Successfully logged in!': 'Logged in!',
+      '-2': 'Register First!',
       '1': 'Fetching classes',
       'Got table': 'Success'
     };
@@ -62,7 +63,7 @@ Page({
       wx.showLoading({
         title: `${status[data]}`,
       })
-      if (data === '-1' || data === 'Got table') {
+      if (data === '-1' || data === '-2' || data === 'Got table') {
         progress.close();
       }
     })
@@ -202,6 +203,10 @@ Page({
       path: 'pages/index/index',
     }
   },
+
+  openMapApp: () => wx.navigateToMiniProgram({
+    appId: "wxf668a17a33aa0527"
+  }),
 
   //事件处理函数
   onLoad: function () {

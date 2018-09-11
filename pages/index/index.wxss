@@ -58,8 +58,9 @@
 }
 
 .help-btn {
-  line-height: 2em;
-  font-size: 1rem;
+  /* font-weight: bold; */
+  padding: 0 20px 0 20px;
+  font-size: 0.9rem;
   background-color: white;
   box-shadow: 0px 10px 20px rgb(196, 228, 255);
   border: 1px solid #1890ff;
@@ -87,6 +88,23 @@
 
 .loggedin-hint :nth-child(1) {
   margin-right: 2px;
+}
+
+.floatPopout {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  width: 10%;
+  border-radius: 30px 0 0 30px;
+  padding: 5px;
+  box-shadow: 0 5px 25px rgba(163, 163, 163, 0.3);
+}
+
+.linkedapp-img {
+  width: 50px;
+  border-radius: 100%;
 }
 
 .emphasis-text {
