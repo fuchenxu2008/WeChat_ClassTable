@@ -2,6 +2,7 @@
 <view class="container">
   <view class='banner'>
     <text>ClassTable</text>
+    <view class="version-hint">New: 2018/19 Semester 1</view>
   </view>
   <view class="form-section">
     <form bindsubmit="formSubmit">
@@ -28,11 +29,19 @@
     </view>
   </view>
 
+  <view class="loggedin-hint" wx:if="{{logged}}">
+    <icon type="success" size="16" />Logged in
+  </view>
+
+  <view class="floatPopout" bindtap="openMapApp">
+    <image src="../../assets/images/map.jpeg" mode="widthFix" class="linkedapp-img"></image>
+  </view>
+
   <view class="modal {{showManualModal.showModal}} ripple fadeInDown">
     <view class="modal-body">
       <view class="modal-heading">
         <view class="heading h1">
-          User Guide <span class="version-number">v1.1.2</span>
+          User Guide <span class="version-number">v1.2.5</span>
           <view class="close-x" bindtap="hideManualModal">x</view>
         </view>
       </view>
@@ -65,6 +74,8 @@
         </view>
       </view>
       <view class="modal-content">
+        <view class="heading">API重构版10月上线</view>
+        <view>西浦官方API支持，React重写，UI翻新，更多功能，预计10月上线</view>
         <view class="heading">导出日历？</view>
         <view>
           如果你想<span class="emphasis-text">下载日历文件存到手机</span>，让你的课程更加融入你的日程安排，可以用手机浏览器打开Web版课表助手
@@ -72,7 +83,7 @@
           同样的操作之后就可以下载到日历文件了，<span class="emphasis-text">Web版同样实现了日历及逐天查看功能</span>，check it out !
         </view>
         <view class="heading">联系方式</view>
-        <view>嗨！我是西浦大三软工的傅晨旭，感谢你的使用和支持～<span class="emphasis-text">请在导出日历后仔细核对是否与官方课表一致。
+        <view>嗨！我是西浦大四软工的傅晨旭，感谢你的使用和支持～<span class="emphasis-text">请在导出日历后仔细核对是否与官方课表一致。
           （您应额外注意课程和其对应的教学周是否匹配）</span> 。如果您遇到了任何问题，发现了错误或有其他需求，
           可以通过以下两种方式联系我~ 如果您觉得本工具很好用，欢迎帮忙转发支持哈 :)
         </view>
