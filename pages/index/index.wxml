@@ -2,7 +2,7 @@
 <view class="container">
   <view class='banner'>
     <text>ClassTable</text>
-    <view class="version-hint">New: 2018/19 Semester 1</view>
+    <view class="version-hint">New: 2018/19 Semester 2</view>
   </view>
   <view class="form-section">
     <form bindsubmit="formSubmit">
@@ -74,8 +74,6 @@
         </view>
       </view>
       <view class="modal-content">
-        <view class="heading">API重构版10月上线</view>
-        <view>西浦官方API支持，React重写，UI翻新，更多功能，预计10月上线</view>
         <view class="heading">导出日历？</view>
         <view>
           如果你想<span class="emphasis-text">下载日历文件存到手机</span>，让你的课程更加融入你的日程安排，可以用手机浏览器打开Web版课表助手

@@ -33,11 +33,7 @@ Page({
         const termStart = moment(config.termStart, "YYYY-MM-DD");
         const selectedDay = moment(this.data.selected_date);
         const actualWeek = Math.floor(selectedDay.diff(termStart, 'days') / 7) + 1;
-        if (actualWeek === 4) {
-            return 3.5;
-        } else {
-            return actualWeek > 4 ? actualWeek - 1 : actualWeek;
-        }
+        return actualWeek;
     },
 
     getInterval(period) {
