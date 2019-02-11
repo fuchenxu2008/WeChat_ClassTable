@@ -1,13 +1,15 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const io = require('../../npm/wxapp-socket-io/index.js')
+const io = require('../../npm/weapp.socket.io');
+const config = require('../../config/index');
 
 Page({
 
   data: {
     uname: '',
     psw: '',
+    logged: false,
     remember: true,
     showManualModal: {
       showModal: 'hideModal',
@@ -31,6 +33,7 @@ Page({
 
   getClass(e) {
     const { uname, psw, remember } = this.data;
+    const that = this;
     if (!this.WxValidate.checkForm(e)) {
       const error = this.WxValidate.errorList[0]
       wx.showToast({
@@ -53,15 +56,18 @@ Page({
       title: `Loading...`,
     })
 
-    const progress = io('wss://class.kyrie.top')
+    const progress = io(config.domain)
     const socketId = `${uname}_${Math.random() * 1000}`;
     progress.on(socketId, data => {
       wx.showLoading({
         title: `${status[data]}`,
       })
+      if (data === '-1' || data === 'Got table') {
+        progress.close();
+      }
     })
     wx.request({
-      url: 'https://class.kyrie.top/ebridge/class',
+      url: `${config.domain}/ebridge/class`,
       method: "POST",
       data: { uname, psw, socketId },
       success: res => {
@@ -69,7 +75,10 @@ Page({
         if (classTable) {
           if (remember) wx.setStorageSync('userCredential', { uname, psw });
           wx.setStorageSync('class', classTable)
-          wx.hideLoading()
+          wx.hideLoading();
+          that.setData({
+            logged: true,
+          });
           // redirect
           wx.switchTab({
             url: '../classpanel/classpanel'
@@ -176,7 +185,7 @@ Page({
 
   copyWeb: function () {
     wx.setClipboardData({
-      data: 'https://class.kyrie.top',
+      data: config.domain,
       success: function (res) {
         wx.showToast({
           title: 'Url copied',
@@ -212,6 +221,9 @@ Page({
       });
 
       if (wx.getStorageSync('class')) {
+        this.setData({
+          logged: true,
+        });
         wx.switchTab({
           url: '../classpanel/classpanel'
         })

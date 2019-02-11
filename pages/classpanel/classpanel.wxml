@@ -21,7 +21,7 @@
     </view>
 
     <template is="calendar"></template>
-    <view class="week-number" wx:if="{{selected_week > 0 && selected_week < 15}}">- Week {{selected_week}}
+    <view class="week-number" wx:if="{{(selected_week > 0 && selected_week < 15) || typeof(selected_week) === 'string'}}">- Week {{selected_week}}
       <text class="weekday"> {{selected_weekDay}}-</text>
     </view>
   </view>
