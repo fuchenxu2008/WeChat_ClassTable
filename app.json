@@ -27,5 +27,8 @@
         "selectedIconPath": "./assets/images/schedule_selected.png"
       }
     ]
-  }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxf668a17a33aa0527"
+  ]
 }
